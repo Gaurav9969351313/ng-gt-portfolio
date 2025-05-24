@@ -1,6 +1,7 @@
 {
   "name": "angular-portfolio",
   "private": true,
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

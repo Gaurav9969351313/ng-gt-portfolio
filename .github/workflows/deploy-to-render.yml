@@ -80,3 +80,5 @@ jobs:
           image-url: gauravtalele32/gauravtalele-portfolio:latest
           render-api-key: ${{ secrets.RENDER_API_KEY }}
           wait-for-deployment: true
+
+          

@@ -40,8 +40,8 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
               <span style="margin-left: 8px;">▼</span>
             </button>
             <div class="dropdown-menu" *ngIf="dropdownOpen">
-              <a href="https://drive.google.com/file/d/1t6UErndFGi3p3X7olbRtgGhjqMp7myQr/view?usp=sharing" download target="_blank" rel="noopener" class="dropdown-item">Resume</a>
-              <a href="https://drive.google.com/file/d/1WXv9fW9Pyn37FqLhzEj0ew6Jblla6Kej/view?usp=sharing" download target="_blank" rel="noopener" class="dropdown-item">Cover Letter</a>
+              <a href="https://drive.google.com/file/d/15Qu5BhCi9yEZ1o1utvsr2BINdVL0NiPV/view?usp=sharing" download target="_blank" rel="noopener" class="dropdown-item">Resume</a>
+              <a href="https://drive.google.com/file/d/1Pt6sLruijYoZ0axnRC5rJlT-jmXzbTU1/view?usp=sharing" download target="_blank" rel="noopener" class="dropdown-item">Cover Letter</a>
             </div>
           </div>
           <!-- End Download Dropdown Button -->
