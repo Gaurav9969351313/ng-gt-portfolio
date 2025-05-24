@@ -33,7 +33,18 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
             <li><a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contact</a></li>
           </ul>
           
-          <a href="assets/files/resume.pdf" download class="btn btn-primary resume-btn">Download Resume</a>
+          <!-- Download Dropdown Button -->
+          <div class="dropdown" (mouseleave)="dropdownOpen = false">
+            <button class="btn btn-primary resume-btn dropdown-toggle" (click)="dropdownOpen = !dropdownOpen" [attr.aria-expanded]="dropdownOpen">
+              Download
+              <span style="margin-left: 8px;">▼</span>
+            </button>
+            <div class="dropdown-menu" *ngIf="dropdownOpen">
+              <a href="https://drive.google.com/file/d/1t6UErndFGi3p3X7olbRtgGhjqMp7myQr/view?usp=sharing" download target="_blank" rel="noopener" class="dropdown-item">Resume</a>
+              <a href="https://drive.google.com/file/d/1WXv9fW9Pyn37FqLhzEj0ew6Jblla6Kej/view?usp=sharing" download target="_blank" rel="noopener" class="dropdown-item">Cover Letter</a>
+            </div>
+          </div>
+          <!-- End Download Dropdown Button -->
         </nav>
       </div>
     </header>
@@ -144,6 +155,48 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
       transition: all var(--transition-normal);
     }
     
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .dropdown-toggle {
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      align-items: center;
+    }
+    
+    .dropdown-menu {
+      position: absolute;
+      top: 110%;
+      right: 0;
+      min-width: 160px;
+      background: var(--bg-light);
+      box-shadow: var(--shadow-md);
+      border-radius: var(--border-radius-md);
+      z-index: 1002;
+      padding: 0.5rem 0;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .dropdown-item {
+      padding: 10px 20px;
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.2s, color 0.2s;
+      border: none;
+      background: none;
+      text-align: left;
+    }
+    
+    .dropdown-item:hover {
+      background: var(--primary-light);
+      color: var(--text-light);
+    }
+    
     @media (max-width: 768px) {
       .menu-toggle {
         display: flex;
@@ -193,6 +246,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 export class HeaderComponent {
   scrolled = false;
   menuOpen = false;
+  dropdownOpen = false;
   
   @HostListener('window:scroll')
   onWindowScroll() {
